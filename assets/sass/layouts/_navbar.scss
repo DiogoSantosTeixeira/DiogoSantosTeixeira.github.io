@@ -5,11 +5,39 @@
 	top: 0;
 	width: 100%;
 	z-index: 999;
-	background: linear-gradient(0deg, rgba(19, 19, 19, 0.1) 0%, rgba(45, 3, 97, 1) 10%, rgba(45, 3, 97, 1) 90%, rgba(19, 19, 19, 1) 100%);
+	background: linear-gradient(0deg, rgba(19, 19, 19, 0.1) 0%, $primary-color-dark 10%, $primary-color-dark 90%, rgba(19, 19, 19, 1) 100%);
 	color: $text-color;
 
 	.container {
 		padding: 1rem 2rem;
+		position: relative;
+	}
+
+	&__toggle {
+		position: absolute;
+		top: 50%;
+		left: calc(40px + 4rem);
+		transform: translateY(-50%);
+
+		cursor: pointer;
+		
+		font-size: $h3-font-size;
+		padding: 0.25rem 0.75rem;
+		background-color: $primary-color;
+		border-radius: 25px;
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+		transition: all 0.1s ease;
+
+		&:hover {
+			background-color: $primary-color-light;
+			transform: scale(1.1) translateY(-50%);
+			transition: all 0.3s ease;
+
+			&:active {
+				transform: scale(1) translateY(-50%);
+				transition: all 0.1s ease;
+			}
+		}
 	}
 
 	&__wrapper {

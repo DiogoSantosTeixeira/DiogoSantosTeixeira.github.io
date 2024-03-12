@@ -1,5 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 /* colors */
+:root {
+  --primary-color: #e26105;
+  --primary-color-light: #f17923;
+  --primary-color-lighter: #f38d45;
+  --primary-color-dark: #c25400;
+  --secondary-color: rgb(19, 19, 19);
+  --secondary-color-light: rgb(19, 19, 19);
+  --secondary-color-dark: rgb(19, 19, 19);
+  --text-color: ghostwhite;
+  --body-color: rgb(19, 19, 19);
+  --black-color: rgb(0, 0, 0);
+}
+
+/* dark mode */
+.dark-mode {
+  --primary-color: #461a9c;
+  --primary-color-light: #7d06dc;
+  --primary-color-lighter: #8a12e6;
+  --primary-color-dark: #2d0361;
+  --secondary-color: #c6bfe7;
+  --secondary-color-light: #d7d8f4;
+  --secondary-color-dark: #b8b1e1;
+  --text-color: ghostwhite;
+  --body-color: rgb(19, 19, 19);
+  --black-color: rgb(0, 0, 0);
+}
+
 /* fonts */
 @keyframes fadeinLeft {
   from {
@@ -30,7 +57,7 @@
 
 a {
   text-decoration: none;
-  color: ghostwhite;
+  color: var(--text-color);
 }
 
 ul {
@@ -47,7 +74,7 @@ html {
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
   scrollbar-width: thin;
-  scrollbar-color: #461a9c rgb(19, 19, 19);
+  scrollbar-color: var(--text-color) var(--body-color);
   scroll-behavior: smooth;
 }
 
@@ -69,8 +96,8 @@ h3 {
 }
 
 body {
-  background-color: rgb(19, 19, 19);
-  color: ghostwhite;
+  background-color: var(--body-color);
+  color: var(--text-color);
 }
 
 /* reusable css classes */
@@ -117,11 +144,34 @@ body {
   top: 0;
   width: 100%;
   z-index: 999;
-  background: linear-gradient(0deg, rgba(19, 19, 19, 0.1) 0%, rgb(45, 3, 97) 10%, rgb(45, 3, 97) 90%, rgb(19, 19, 19) 100%);
-  color: ghostwhite;
+  background: linear-gradient(0deg, rgba(19, 19, 19, 0.1) 0%, var(--primary-color-dark) 10%, var(--primary-color-dark) 90%, rgb(19, 19, 19) 100%);
+  color: var(--text-color);
 }
 .navbar .container {
   padding: 1rem 2rem;
+  position: relative;
+}
+.navbar__toggle {
+  position: absolute;
+  top: 50%;
+  left: calc(40px + 4rem);
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--primary-color);
+  border-radius: 25px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.1s ease;
+}
+.navbar__toggle:hover {
+  background-color: var(--primary-color-light);
+  transform: scale(1.1) translateY(-50%);
+  transition: all 0.3s ease;
+}
+.navbar__toggle:hover:active {
+  transform: scale(1) translateY(-50%);
+  transition: all 0.1s ease;
 }
 .navbar__wrapper {
   display: flex;
@@ -143,16 +193,16 @@ body {
   gap: 1rem;
 }
 .navbar__menu li a {
-  color: #d7d8f4;
+  color: var(--secondary-color-light);
   display: block;
   padding: 0.25rem 1rem;
-  background-color: #461a9c;
+  background-color: var(--primary-color);
   border-radius: 15px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 .navbar__menu li a:hover {
-  background-color: #7d06dc;
+  background-color: var(--primary-color-light);
   scale: 1.1;
 }
 .navbar__menu li a i::before {
@@ -162,8 +212,8 @@ body {
 
 footer {
   margin-top: 10rem;
-  background: linear-gradient(0deg, rgba(19, 19, 19, 0.1) 0%, rgb(45, 3, 97) 10%, rgb(45, 3, 97) 90%, rgb(19, 19, 19) 100%);
-  color: ghostwhite;
+  background: linear-gradient(0deg, rgba(19, 19, 19, 0.1) 0%, var(--primary-color-dark) 10%, var(--primary-color-dark) 90%, rgb(19, 19, 19) 100%);
+  color: var(--text-color);
   padding: 1rem 1rem;
   display: flex;
   justify-content: center;
@@ -278,10 +328,10 @@ footer {
 .reviews__card {
   width: 100%;
   height: 100%;
-  border: 2px solid #461a9c;
+  border: 2px solid var(--primary-color);
   border-radius: 15px;
-  color: #d7d8f4;
-  background-color: #2d0361;
+  color: var(--secondary-color-light);
+  background-color: var(--primary-color-dark);
   position: relative;
   overflow: hidden;
 }
@@ -311,7 +361,7 @@ footer {
   margin: 1rem;
   padding: 0.25rem 0.5rem;
   font-size: 0.833rem;
-  background-color: #461a9c;
+  background-color: var(--primary-color);
   border-radius: 15px;
   transition: all 0.2s;
   opacity: 0;
@@ -330,11 +380,11 @@ footer {
   display: inline-block;
   margin: 1rem;
   padding: 0.25rem 0.5rem;
-  background-color: #461a9c;
+  background-color: var(--primary-color);
   border-radius: 15px;
   transition: all 0.3s ease-in-out;
 }
 .reviews__card-content a:hover {
-  background-color: #7d06dc;
+  background-color: var(--primary-color-light);
   scale: 1.1;
 }

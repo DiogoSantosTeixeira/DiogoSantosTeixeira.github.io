@@ -43,3 +43,17 @@ body {
 	transform: translateY(0);
 	opacity: 1;
 }
+
+.dark-mode {
+	
+	$primary-color: #461a9c;
+	$primary-color-light: #7d06dc;
+	$primary-color-lighter: #8a12e6;
+	$primary-color-dark: #2d0361;
+	$secondary-color: #c6bfe7;
+	$secondary-color-light: #d7d8f4;
+	$secondary-color-dark: #b8b1e1;
+	$text-color: ghostwhite;
+	$body-color: rgb(19, 19, 19);
+	$black-color: rgb(0, 0, 0);
+}
