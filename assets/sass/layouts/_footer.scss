@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as *;
+
+footer {
+    margin-top: 10rem;
+	background: linear-gradient(0deg, rgba(19, 19, 19, 0.1) 0%, rgba(45, 3, 97, 1) 10%, rgba(45, 3, 97, 1) 90%, rgba(19, 19, 19, 1) 100%);
+	color: $text-color;
+	padding: 1rem 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    text-align: center;
+}

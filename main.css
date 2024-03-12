@@ -1,0 +1,340 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+/* colors */
+/* fonts */
+@keyframes fadeinLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeinRight {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: ghostwhite;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  scrollbar-width: thin;
+  scrollbar-color: #461a9c rgb(19, 19, 19);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1.44rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+body {
+  background-color: rgb(19, 19, 19);
+  color: ghostwhite;
+}
+
+/* reusable css classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.left {
+  margin-left: 50px;
+}
+
+.right {
+  margin-right: 50px;
+}
+
+.bgblur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(rgba(0, 0, 0, 0.5), rgb(19, 19, 19) 70%);
+  z-index: -1;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(200px);
+  transition: all 1.5s;
+}
+
+.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: linear-gradient(0deg, rgba(19, 19, 19, 0.1) 0%, rgb(45, 3, 97) 10%, rgb(45, 3, 97) 90%, rgb(19, 19, 19) 100%);
+  color: ghostwhite;
+}
+.navbar .container {
+  padding: 1rem 2rem;
+}
+.navbar__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar__logo {
+  width: 40px;
+  margin: -0.5rem 0;
+}
+.navbar__logo img {
+  width: 100%;
+  height: auto;
+}
+.navbar__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.navbar__menu li a {
+  color: #d7d8f4;
+  display: block;
+  padding: 0.25rem 1rem;
+  background-color: #461a9c;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.navbar__menu li a:hover {
+  background-color: #7d06dc;
+  scale: 1.1;
+}
+.navbar__menu li a i::before {
+  font-size: 1.1rem;
+  margin-bottom: -0.25rem;
+}
+
+footer {
+  margin-top: 10rem;
+  background: linear-gradient(0deg, rgba(19, 19, 19, 0.1) 0%, rgb(45, 3, 97) 10%, rgb(45, 3, 97) 90%, rgb(19, 19, 19) 100%);
+  color: ghostwhite;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero {
+  cursor: default;
+  margin-top: 4.173rem;
+  height: calc(100vh - 4.173rem);
+  position: relative;
+  background-image: url(./assets/img/luv7_hero.jpg);
+  background-position: center;
+  background-size: cover;
+  z-index: -1;
+  /* .bgblur {
+  	content: '';
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100%;
+  	background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(19, 19, 19, 1) 70%);
+         z-index: -1;
+         backdrop-filter: blur(5px);
+  } */
+}
+.hero .container {
+  height: 100%;
+}
+.hero__wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.hero__wrapper h1 {
+  opacity: 0;
+  animation: fadeinLeft 0.7s ease-out 0.3s forwards;
+}
+.hero__wrapper p {
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeinRight 0.7s ease-out 1s forwards;
+}
+
+.about {
+  /* border: 1px solid green; */
+  margin-top: 5rem;
+  height: 40vh;
+  cursor: default;
+}
+.about .container {
+  height: 100%;
+  position: relative;
+}
+.about__wrapper {
+  height: 100%;
+}
+.about__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+.about__text {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.about__text h2 {
+  width: 34%;
+  font-size: 3rem;
+  text-align: center;
+}
+.about__text p {
+  font-size: 1.44rem;
+  width: 66%;
+}
+
+.reviews {
+  margin: 10rem 0;
+  cursor: default;
+  /* .container {
+  } */
+}
+.reviews__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.reviews__wrapper h2 {
+  width: 34%;
+  text-align: center;
+  font-size: 3rem;
+}
+.reviews__cards {
+  display: flex;
+  gap: 3rem;
+  height: 500px;
+}
+.reviews__card {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #461a9c;
+  border-radius: 15px;
+  color: #d7d8f4;
+  background-color: #2d0361;
+  position: relative;
+  overflow: hidden;
+}
+.reviews__card:nth-child(2) {
+  transition-delay: 0.3s;
+}
+.reviews__card:nth-child(3) {
+  transition-delay: 0.6s;
+}
+.reviews__card:hover .reviews__card-date {
+  opacity: 1;
+}
+.reviews__card-img {
+  width: 100%;
+}
+.reviews__card-img img {
+  width: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.reviews__card-date {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.833rem;
+  background-color: #461a9c;
+  border-radius: 15px;
+  transition: all 0.2s;
+  opacity: 0;
+}
+.reviews__card-content {
+  padding: 1rem;
+}
+.reviews__card-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.reviews__card-content a {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  margin: 1rem;
+  padding: 0.25rem 0.5rem;
+  background-color: #461a9c;
+  border-radius: 15px;
+  transition: all 0.3s ease-in-out;
+}
+.reviews__card-content a:hover {
+  background-color: #7d06dc;
+  scale: 1.1;
+}

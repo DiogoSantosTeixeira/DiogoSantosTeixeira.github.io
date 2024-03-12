@@ -1,0 +1,57 @@
+@use '../abstracts/variables' as *;
+
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	background: linear-gradient(0deg, rgba(19, 19, 19, 0.1) 0%, rgba(45, 3, 97, 1) 10%, rgba(45, 3, 97, 1) 90%, rgba(19, 19, 19, 1) 100%);
+	color: $text-color;
+
+	.container {
+		padding: 1rem 2rem;
+	}
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		width: 40px;
+		margin: -0.5rem 0;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__menu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+
+		li a {
+			color: $secondary-color-light;
+			display: block;
+			padding: 0.25rem 1rem;
+			background-color: $primary-color;
+			border-radius: 15px;
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+			transition: all 0.3s ease;
+
+			&:hover {
+				background-color: $primary-color-light;
+				scale: 1.1;
+			}
+
+			i::before {
+				font-size: 1.1rem;
+				margin-bottom: -0.25rem;
+			}
+		}
+	}
+}

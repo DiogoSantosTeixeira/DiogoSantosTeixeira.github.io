@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as *;
+/* resets */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+    color: $text-color;
+}
+
+ul {
+	list-style-type: none;
+}
+
+img {
+	display: block;
+}
+
+/* Prevent font size inflation */
+
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+    scrollbar-width: thin;
+    scrollbar-color: $primary-color $body-color;
+    scroll-behavior: smooth;
+}
