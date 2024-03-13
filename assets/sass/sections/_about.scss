@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .about {
 	/* border: 1px solid green; */
@@ -32,15 +33,30 @@
 		gap: 3rem;
 		text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
+		@include screen-max-width(800px) {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
 		h2 {
 			width: 34%;
 			font-size: $h1-font-size;
 			text-align: center;
+
+			@include screen-max-width(800px) {
+				width: 100%;
+			}
 		}
 
 		p {
 			font-size: $h2-font-size;
 			width: 66%;
+
+			@include screen-max-width(800px) {
+				font-size: $h3-font-size;
+				width: 100%;
+				text-align: center;
+			}
 		}
 	}
 }

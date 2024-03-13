@@ -376,14 +376,32 @@ footer {
   gap: 3rem;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+@media screen and (max-width: 800px) {
+  .about__text {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
 .about__text h2 {
   width: 34%;
   font-size: 3rem;
   text-align: center;
 }
+@media screen and (max-width: 800px) {
+  .about__text h2 {
+    width: 100%;
+  }
+}
 .about__text p {
   font-size: 1.44rem;
   width: 66%;
+}
+@media screen and (max-width: 800px) {
+  .about__text p {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .reviews {
