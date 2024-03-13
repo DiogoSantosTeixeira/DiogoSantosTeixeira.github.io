@@ -10,6 +10,17 @@ const hiddenEl = document.querySelectorAll('.hidden');
 const toggleButton = document.querySelector('.navbar__toggle');
 const theme = localStorage.getItem('theme');
 
+const menuButton = document.querySelector('.navbar__hamburguer');
+const menuEl = document.querySelector('.navbar__menu');
+
+menuButton.addEventListener('click', () => {
+	if (menuEl.classList.contains('active')) {
+		menuEl.classList.remove('active');
+	} else {
+		menuEl.classList.add('active');
+	}
+})
+
 theme && document.body.classList.add(theme);
 
 toggleButton.addEventListener('click', () => {
