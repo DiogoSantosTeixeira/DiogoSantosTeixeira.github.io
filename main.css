@@ -307,6 +307,7 @@ footer {
 }
 .hero .container {
   height: 100%;
+  padding: 0;
 }
 .hero__wrapper {
   height: 100%;
@@ -315,15 +316,33 @@ footer {
   justify-content: center;
   align-items: center;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 .hero__wrapper h1 {
   opacity: 0;
   animation: fadeinLeft 0.7s ease-out 0.3s forwards;
+  line-height: 1.2;
+}
+.hero__wrapper h1 br {
+  display: none;
+}
+@media screen and (max-width: 670px) {
+  .hero__wrapper h1 br {
+    display: block;
+  }
 }
 .hero__wrapper p {
   font-size: 1.2rem;
   opacity: 0;
   animation: fadeinRight 0.7s ease-out 1s forwards;
+}
+.hero__wrapper p br {
+  display: none;
+}
+@media screen and (max-width: 670px) {
+  .hero__wrapper p br {
+    display: block;
+  }
 }
 
 .about {
