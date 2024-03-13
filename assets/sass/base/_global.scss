@@ -5,6 +5,10 @@ body {
 	color: $text-color;
 }
 
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
 /* reusable css classes */
 
 .container {

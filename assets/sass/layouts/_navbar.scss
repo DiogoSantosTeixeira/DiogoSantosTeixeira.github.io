@@ -20,10 +20,7 @@
 		top: 50%;
 		left: calc(40px + 4rem);
 		transform: translateY(-50%);
-		/* outline: none;
-		border: none;
-		color: $text-color; */
-
+		-webkit-tap-highlight-color: transparent;
 		cursor: pointer;
 
 		font-size: $h3-font-size;
@@ -128,6 +125,7 @@
 	}
 
 	&__hamburguer {
+		-webkit-tap-highlight-color: transparent;
 		cursor: pointer;
 		display: none;
 
@@ -142,8 +140,6 @@
 			background-color: $primary-color-light;
 			transform: scale(1.1);
 			transition: all 0.3s ease;
-
-			
 		}
 		
 		&:active {

@@ -100,6 +100,10 @@ body {
   color: var(--text-color);
 }
 
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* reusable css classes */
 .container {
   width: 100%;
@@ -157,9 +161,7 @@ body {
   top: 50%;
   left: calc(40px + 4rem);
   transform: translateY(-50%);
-  /* outline: none;
-  border: none;
-  color: $text-color; */
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   font-size: 1.2rem;
   padding: 0.25rem 0.75rem;
@@ -249,6 +251,7 @@ body {
   }
 }
 .navbar__hamburguer {
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   display: none;
   font-size: 1.2rem;
@@ -347,7 +350,7 @@ footer {
 
 .about {
   /* border: 1px solid green; */
-  margin-top: 5rem;
+  padding-top: 5rem;
   height: 40vh;
   cursor: default;
 }
@@ -405,7 +408,8 @@ footer {
 }
 
 .reviews {
-  margin: 10rem 0;
+  padding-top: 5rem;
+  margin-bottom: 5rem;
   cursor: default;
 }
 @media screen and (max-width: 990px) {
@@ -450,6 +454,7 @@ footer {
   }
 }
 .reviews__cards-buttons .prev_button, .reviews__cards-buttons .next_button {
+  -webkit-tap-highlight-color: transparent;
   cursor: pointer;
   font-size: 2rem;
   width: 50px;
