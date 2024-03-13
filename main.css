@@ -131,7 +131,7 @@ body {
 .hidden {
   opacity: 0;
   transform: translateY(200px);
-  transition: all 1.5s;
+  transition: opacity 1.5s, transform 1.5s;
 }
 
 .show {
@@ -407,23 +407,82 @@ footer {
 .reviews {
   margin: 10rem 0;
   cursor: default;
-  /* .container {
-  } */
+}
+@media screen and (max-width: 990px) {
+  .reviews .container {
+    padding: 0;
+  }
 }
 .reviews__wrapper {
   display: flex;
   flex-direction: column;
   gap: 5rem;
 }
+@media screen and (max-width: 990px) {
+  .reviews__wrapper {
+    gap: 2rem;
+    position: relative;
+  }
+}
 .reviews__wrapper h2 {
   width: 34%;
   text-align: center;
   font-size: 3rem;
 }
+@media screen and (max-width: 990px) {
+  .reviews__wrapper h2 {
+    width: 100%;
+  }
+}
+.reviews__cards-buttons {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 1rem;
+  z-index: 10;
+  gap: 1rem;
+}
+@media screen and (max-width: 990px) {
+  .reviews__cards-buttons {
+    display: flex;
+  }
+}
+.reviews__cards-buttons .prev_button, .reviews__cards-buttons .next_button {
+  cursor: pointer;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  display: grid;
+  place-items: center;
+  transition: transform 0.1s ease-in-out;
+}
+.reviews__cards-buttons .prev_button:active, .reviews__cards-buttons .next_button:active {
+  transform: scale(0.9);
+}
 .reviews__cards {
   display: flex;
   gap: 3rem;
   height: 500px;
+  /* border: 1px solid green; */
+}
+@media screen and (max-width: 990px) {
+  .reviews__cards {
+    width: 320px;
+    margin: 0 auto;
+    gap: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
 }
 .reviews__card {
   width: 100%;
@@ -435,11 +494,28 @@ footer {
   position: relative;
   overflow: hidden;
 }
+@media screen and (max-width: 990px) {
+  .reviews__card {
+    transition-delay: 0s;
+    flex-shrink: 0;
+    width: 100%;
+  }
+}
 .reviews__card:nth-child(2) {
   transition-delay: 0.3s;
 }
+@media screen and (max-width: 1000px) {
+  .reviews__card:nth-child(2) {
+    transition-delay: 0s;
+  }
+}
 .reviews__card:nth-child(3) {
   transition-delay: 0.6s;
+}
+@media screen and (max-width: 1000px) {
+  .reviews__card:nth-child(3) {
+    transition-delay: 0s;
+  }
 }
 .reviews__card:hover .reviews__card-date {
   opacity: 1;
@@ -465,6 +541,11 @@ footer {
   border-radius: 15px;
   transition: all 0.2s;
   opacity: 0;
+}
+@media screen and (max-width: 990px) {
+  .reviews__card-date {
+    opacity: 1;
+  }
 }
 .reviews__card-content {
   padding: 1rem;
