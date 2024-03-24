@@ -12,7 +12,11 @@ const theme = localStorage.getItem('theme');
 
 const menuButton = document.querySelector('.navbar__hamburguer');
 const menuEl = document.querySelector('.navbar__menu');
-
+/* supabase */
+const supabaseUrl = 'https://thusazwaleqfkqmlxrgq.supabase.co';
+const supabaseKey =
+	'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRodXNhendhbGVxZmtxbWx4cmdxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3NzY2NzUsImV4cCI6MjAyNjM1MjY3NX0.5MP4H5fbtsSyYiYcxfEtaxnzkbgzCPHMAOpCkpSvXgg';
+const database = supabase.createClient(supabaseUrl, supabaseKey);
 
 
 
