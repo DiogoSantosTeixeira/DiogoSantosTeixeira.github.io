@@ -192,13 +192,182 @@ a {
   width: 100%;
   height: auto;
 }
+.navbar nav {
+  /* border: 1px solid green; */
+  display: flex;
+}
+@media screen and (max-width: 750px) {
+  .navbar nav {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.navbar nav #userIcon, .navbar nav #loginBtn {
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--secondary-color-light);
+  display: block;
+  padding: 0.25rem 1rem;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.navbar nav #userIcon:hover, .navbar nav #loginBtn:hover {
+  background-color: var(--primary-color-light);
+  transform: scale(1.1);
+}
+.navbar nav #userIcon:active, .navbar nav #loginBtn:active {
+  transform: scale(1);
+  transition: all 0.1s ease;
+}
+.navbar nav #userIcon.loggedIn, .navbar nav #loginBtn.loggedIn {
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  .navbar nav #userIcon, .navbar nav #loginBtn {
+    align-self: flex-end;
+  }
+}
+.navbar nav #userIcon {
+  font-size: 1.2rem;
+  display: none;
+}
+.navbar nav #userIcon.loggedIn {
+  display: block;
+}
+.navbar__user {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  transform: translateX(150%);
+  width: -moz-fit-content;
+  width: fit-content;
+  opacity: 0;
+  transition: opacity 0.3s ease 0s, transform 0.7s ease;
+  padding: 1rem;
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  border: 2px solid var(--primary-color-dark);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.navbar__user.active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.3s ease 0s, transform 0.7s ease;
+}
+.navbar__user a, .navbar__user button {
+  display: block;
+  padding: 0.25rem 1rem;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+.navbar__user a:hover, .navbar__user button:hover {
+  background-color: var(--primary-color-light);
+  transform: scale(1.1);
+}
+.navbar__user a:active, .navbar__user button:active {
+  transform: scale(1);
+  transition: all 0.1s ease;
+}
+.navbar__user button {
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+.navbar__login {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  transform: translateX(50%) translateY(-150%);
+  margin: 0.5rem;
+  text-align: center;
+  opacity: 0;
+  color: var(--text-color);
+  background-color: var(--primary-color-dark);
+  border: 2px solid var(--primary-color);
+  border-radius: 15px;
+  transition: opacity 0.3s ease 0s, transform 0.7s ease;
+}
+.navbar__login.active {
+  opacity: 1;
+  transform: translateX(50%) translateY(0);
+  transition: opacity 0.3s ease 0.2s, transform 0.5s ease;
+}
+.navbar__login-signup, .navbar__login-signin {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+.navbar__login-signup input, .navbar__login-signin input {
+  margin: 0;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  display: block;
+  padding: 0.25rem 1rem;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  /* cursor: default; */
+}
+.navbar__login-signup input::-moz-placeholder, .navbar__login-signin input::-moz-placeholder {
+  color: var(--primary-color-lighter);
+}
+.navbar__login-signup input::placeholder, .navbar__login-signin input::placeholder {
+  color: var(--primary-color-lighter);
+}
+.navbar__login-signup button, .navbar__login-signin button {
+  margin: 0;
+  align-self: center;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  display: block;
+  padding: 0.25rem 1rem;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.navbar__login-signup button:hover, .navbar__login-signin button:hover {
+  background-color: var(--primary-color-light);
+  transform: scale(1.1);
+}
+.navbar__login-signup button:active, .navbar__login-signin button:active {
+  transform: scale(1);
+  transition: all 0.1s ease;
+}
 .navbar__menu {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .navbar__menu {
     position: absolute;
     top: 100%;
@@ -208,7 +377,7 @@ a {
     text-align: center;
   }
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .navbar__menu li {
     flex-shrink: 0;
     width: 100%;
@@ -245,7 +414,7 @@ a {
   font-size: 1.1rem;
   margin-bottom: -0.25rem;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .navbar__menu.active li {
     transform: translateY(0);
   }
@@ -270,7 +439,7 @@ a {
   transform: scale(1);
   transition: all 0.1s ease;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .navbar__hamburguer {
     display: block;
   }

@@ -26,6 +26,30 @@
 						<img src="https://thusazwaleqfkqmlxrgq.supabase.co/storage/v1/object/public/assets/luv7_logo.png" alt="logo" />
 					</div>
 					<nav>
+						<button id="userIcon"><i class="ri-user-line"></i></button>
+						<div class="navbar__user">
+							<span id="userName">username</span>
+							<a href="#">Perfil</a>
+							<button id="logoutBtn">Terminar Sessão</button>
+						</div>
+						<button id="loginBtn">Iniciar Sessão</button>
+						<div class="navbar__login">
+							<div class="navbar__login-signup">
+								<h3>Sign Up</h3>
+								<p>Criar uma conta</p>
+								<input spellcheck="false" type="text" id="signupUsername" name="username" placeholder="Username" />
+								<input spellcheck="false" type="email" id="signupEmail" name="email" placeholder="Email" />
+								<input type="password" id="signupPassword" name="password" placeholder="Password" />
+								<button id="signupBtn">Criar</button>
+							</div>
+							<div class="navbar__login-signin">
+								<h3>Sign In</h3>
+								<p>Já tenho uma conta</p>
+								<input spellcheck="false" type="email" id="signinEmail" name="email" placeholder="Email" />
+								<input type="password" id="signinPassword" name="password" placeholder="Password" />
+								<button id="signinBtn">Entrar</button>
+							</div>
+						</div>
 						<ul class="navbar__menu">
 							<li><a href="#about">About</a></li>
 							<li><a href="#reviews">Reviews</a></li>
