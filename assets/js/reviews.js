@@ -14,7 +14,6 @@ async function getArticles() {
 	if (error) {
 		console.log(error);
 	} else {
-		console.log(data);
 		generateArticles(data);
 	}
 }
@@ -26,7 +25,6 @@ async function getImage(image) {
 	if (error) {
 		console.log(error);
 	} else {
-		console.log(data.publicUrl);
 		return data.publicUrl;
 	}
 }
@@ -41,7 +39,7 @@ async function generateArticles(data) {
 		article.classList.add('article');
 		article.id = data[i].id;
 		let image = await getImage(data[i].main_image);
-		let date = data[i].created_at.split('T')[0]
+		let date = data[i].date
 		article.innerHTML = `
 		<div class="image_wrapper">
 		<img src="${image}" alt=""/>

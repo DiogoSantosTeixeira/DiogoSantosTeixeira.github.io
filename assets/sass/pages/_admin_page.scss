@@ -1,0 +1,122 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.article-generator {
+	margin-top: 4.173rem;
+
+	&__wrapper {
+		h2 {
+			margin-bottom: 2rem;
+			font-size: $h1-font-size;
+			width: 100%;
+			flex-shrink: 0;
+			text-align: center;
+		}
+	}
+
+	&__text {
+		display: grid;
+		grid-template-columns: 20% 1fr;
+		gap: 1rem;
+
+		div {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+
+		label,
+		input,
+		textarea {
+			font-size: $h3-font-size;
+			width: 100%;
+		}
+
+		label {
+            width: 50%;
+			text-align: center;
+			font-size: $h2-font-size;
+			margin: 0.5rem auto;
+            border: 2px solid $primary-color;
+			border-radius: 15px;
+			background-color: $primary-color-light;
+			color: $text-color;
+			cursor: pointer;
+		}
+
+		input {
+			max-width: 700px;
+			margin: 0 auto;
+			padding: 0.5rem;
+			color: $text-color;
+			background-color: transparent;
+			border: 2px solid $primary-color;
+			outline: none;
+			font-family: $body-font;
+			border-radius: 15px;
+		}
+
+		textarea {
+			min-height: 40rem;
+			max-width: 700px;
+			margin: 0 auto;
+			resize: none;
+			padding: 0.5rem;
+			color: $text-color;
+			background-color: transparent;
+			border: 2px solid $primary-color;
+			outline: none;
+			font-family: $body-font;
+			border-radius: 15px;
+		}
+
+		button {
+			width: 100%;
+			padding: 1rem 1.5rem;
+			font-size: $h3-font-size;
+			border: 2px solid $primary-color;
+			border-radius: 15px;
+			background-color: $primary-color-light;
+			color: $text-color;
+			cursor: pointer;
+
+			transition: all 0.3s ease;
+
+			&:hover {
+				background-color: $primary-color;
+			}
+		}
+
+		input[type='file'] {
+			display: none;
+		}
+
+		#alertEl {
+			display: block;
+			text-align: center;
+			margin-top: 1rem;
+			color: red;
+		}
+	}
+}
+
+.articles__content {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1rem;
+
+	.article {
+		width: 100%;
+		border: 2px solid $primary-color;
+		border-radius: 15px;
+		padding: 1rem;
+		background-color: $primary-color-light;
+		color: $text-color;
+
+		h3 {
+			font-size: $h2-font-size;
+			margin-bottom: 1rem;
+		}
+	}
+}

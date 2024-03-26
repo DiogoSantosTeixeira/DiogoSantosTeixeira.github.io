@@ -52,6 +52,14 @@ main.reviewspage {
 		border: 2px solid $primary-color;
 		border-radius: 15px;
 
+		@include screen-max-width(750px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include screen-max-width(550px) {
+			grid-template-columns: 1fr;
+		}
+
 		& .article {
 			position: relative;
 			border-radius: 15px;

@@ -130,6 +130,7 @@ async function signUpUser(username, email, password) {
 		options: {
 			data: {
 				username: username,
+				is_admin: true,
 			},
 		},
 	});
@@ -143,7 +144,7 @@ async function signUpUser(username, email, password) {
 				alert(error.message);
 		}
 		return;
-	} else {
+	} else if (data){
 		alert('Conta criada! Confira seu email para ativar sua conta.');
 		location.reload();
 	}
@@ -173,8 +174,10 @@ async function signInUser(email, password) {
 async function checkUser() {
 	const { data, error } = await database.auth.getUser();
 	if (data.user !== null) {
-		userName.innerHTML = 'Welcome ' + data.user.user_metadata.username + '!';
-		console.log(data);
+		userName.innerHTML = 'Bem vindo ' + data.user.user_metadata.username + '!';
+		if (data.user.user_metadata.is_admin === true) {
+			menuEl.innerHTML += '<li><a href="/admin/admin.html">Admin</a></li>';
+		}
 
 		return true;
 	} else {
