@@ -204,7 +204,7 @@ a {
 }
 .navbar nav #userIcon, .navbar nav #loginBtn {
   margin-right: 1rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: "Poppins", sans-serif;
   color: var(--secondary-color-light);
   display: block;
@@ -234,7 +234,6 @@ a {
   }
 }
 .navbar nav #userIcon {
-  font-size: 1.2rem;
   display: none;
 }
 .navbar nav #userIcon.loggedIn {

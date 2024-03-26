@@ -68,7 +68,7 @@
 
 		#userIcon, #loginBtn {
 			margin-right: 1rem;
-			font-size: $normal-font-size;
+			font-size: $h3-font-size;
 			font-family: $body-font;
 			color: $secondary-color-light;
 			display: block;
@@ -100,7 +100,6 @@
 		}
 
 		#userIcon {
-			font-size: $h3-font-size;
 			display: none;
 
 			&.loggedIn {
