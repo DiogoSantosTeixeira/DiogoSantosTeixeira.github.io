@@ -21,7 +21,7 @@ async function generatePage(data) {
     <div class="container">
         <div class="articlepage__wrapper">
             <div class="articlepage__wrapper-image">
-                <img src="${await getImage(data.main_image)}" alt=""/>
+                <img src="${await getImage(data.banner_image)}" alt=""/>
             </div>
             <div class="articlepage__wrapper-title">
                 <h1>${data.header}</h1>
