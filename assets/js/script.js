@@ -130,7 +130,7 @@ async function signUpUser(username, email, password) {
 		options: {
 			data: {
 				username: username,
-				is_admin: true,
+				is_admin: false,
 			},
 		},
 	});

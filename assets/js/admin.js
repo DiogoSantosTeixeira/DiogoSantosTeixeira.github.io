@@ -99,7 +99,6 @@ async function saveArticle() {
                     alert(error.message);
                     return;
                 }
-                clearInput();
                 alert('Artigo salvo com sucesso!');
             }
 		}
