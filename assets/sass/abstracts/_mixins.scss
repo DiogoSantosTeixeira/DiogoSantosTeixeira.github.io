@@ -1,5 +1,0 @@
-@mixin screen-max-width($entries) {
-    @media screen and (max-width: $entries) {
-        @content;
-    }
-}
